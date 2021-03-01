@@ -2,9 +2,11 @@ from requests import request
 from bs4 import BeautifulSoup
 import re
 from datetime import datetime
+import json
+from os import getcwd
 
 class GVU_StPoelten:
-    def __init__(self,destrict_url = "https://stpoeltenland.umweltverbaende.at/?gem_nr=31917&jahr=2021&kat=32&portal=verband&vb=pl"):
+    def __init__(self,destrict_url):
         if not isinstance(destrict_url,str):
             raise ValueError("destrict_url musst be a string")
         
@@ -12,6 +14,7 @@ class GVU_StPoelten:
         self.replace_pattern = '\t?\n?\xa0?'
         self.split_pattern = '\s+'
         self.date_format = '%d.%m.%Y'
+        self.working_directory = getcwd()
 
     def load_page(self):
         """
@@ -41,7 +44,7 @@ class GVU_StPoelten:
 
         return return_list
 
-    def format_to_python_objects(self,get_garbage_collector_times):
+    def format_to_json_object(self,get_garbage_collector_times):
         """
         loads from get_garbage_collector_times list
         returns new list with datetime string
@@ -53,6 +56,27 @@ class GVU_StPoelten:
             #remove Weekday (MO)
             item_list = item_list[1:]
             date = datetime.strptime(item_list[0],self.date_format)
-            return_list.append({'date':date,'garbage_container_type':item_list[1]})
+
+            #standart format
+            new_date_string = date.strftime('%Y-%m-%d')
+
+            return_list.append({'date':new_date_string,'garbage_container_type':item_list[1]})
 
         return return_list
+
+    def json_dump(self,object):
+        """
+        json dump object to 
+        """
+        try:
+            with open(self.working_directory + '/gvu_stpoelten.json','w') as jf:
+                json.dump(object,jf)
+
+        except Exception as e:
+            raise e
+        else:
+            return True
+
+if __name__ == "__main__":
+    r = GVU_StPoelten("https://stpoeltenland.umweltverbaende.at/?gem_nr=31917&jahr=2021&kat=32&portal=verband&vb=pl")
+    r.json_dump(r.format_to_json_object(r.get_garbage_collector_times()))
