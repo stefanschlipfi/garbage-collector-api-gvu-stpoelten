@@ -1,0 +1,9 @@
+[Unit]
+Description=Garbage Collector Webscraper
+
+[Service]
+Type=simple
+ExecStart=/opt/garbage-collector-api/bin/python3 /opt/garbage-collector-api/Webscraper.py
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Outdoor Kitchen Flask APP
+
+[Service]
+Type=simple
+ExecStart=/bin/bash //opt/garbage-collector-api/run.sh
+
+[Install]
+WantedBy=multi-user.target
