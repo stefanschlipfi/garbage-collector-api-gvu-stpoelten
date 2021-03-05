@@ -13,8 +13,9 @@ class GVU_StPoelten:
         self.destrict_url = destrict_url
         self.replace_pattern = '\t?\n?\xa0?'
         self.split_pattern = '\s+'
-        self.date_format = '%d.%m.%Y'
-        self.working_directory = getcwd()
+        self.from_date_format = '%d.%m.%Y'
+        self.to_date_format = '%Y-%m-%d 12:00'
+        self.working_directory = "/opt/garbage-collector-api" 
 
     def load_page(self):
         """
@@ -55,10 +56,10 @@ class GVU_StPoelten:
 
             #remove Weekday (MO)
             item_list = item_list[1:]
-            date = datetime.strptime(item_list[0],self.date_format)
+            date = datetime.strptime(item_list[0],self.from_date_format)
 
             #standart format
-            new_date_string = date.strftime('%Y-%m-%d')
+            new_date_string = date.strftime(self.to_date_format)
 
             return_list.append({'date':new_date_string,'garbage_container_type':item_list[1]})
 
