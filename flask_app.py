@@ -3,6 +3,7 @@ import json
 import os
 from werkzeug import exceptions
 from datetime import datetime
+import humanize
     
 app = flask.Flask(__name__)
 
@@ -21,10 +22,10 @@ def load_json():
             return neu_datetime
         
     except FileNotFoundError as e:
-        return  exceptions.InternalServerError(description="File Not found. Directory: {0}".format(working_directory))
+        raise  exceptions.InternalServerError(description="File Not found. Directory: {0}".format(working_directory))
         
     except Exception as e:
-        return exceptions.InternalServerError(description=e)
+        raise exceptions.InternalServerError(description=e)
 
 
 @app.route("/all/",methods=["GET"])
@@ -47,7 +48,9 @@ def get_next():
         if item['date'] < now:
             continue
         if item['date'] >= now:
-            return flask.jsonify(item)
+            d = item.copy()
+            d.update({'remaining_time': humanize.precisedelta(item['date'] - now,minimum_unit="hours")})
+            return flask.jsonify(d)
 
 
 if __name__ == '__main__':
