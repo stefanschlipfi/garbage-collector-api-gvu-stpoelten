@@ -12,9 +12,9 @@ class GVU_StPoelten:
         
         self.destrict_url = destrict_url
         self.replace_pattern = '\t?\n?\xa0?'
-        self.split_pattern = '\s+'
+        self.split_pattern = '\s\s'
         self.from_date_format = '%d.%m.%Y'
-        self.to_date_format = '%Y-%m-%d 12:00'
+        self.to_date_format = '%Y-%m-%d 06:00'
         self.working_directory = "/opt/garbage-collector-api" 
 
     def load_page(self):
@@ -70,8 +70,8 @@ class GVU_StPoelten:
         json dump object to 
         """
         try:
-            with open(self.working_directory + '/gvu_stpoelten.json','w') as jf:
-                json.dump(object,jf)
+            with open(self.working_directory + '/gvu_stpoelten.json','w',encoding="utf-8") as jf:
+                json.dump(object,jf,ensure_ascii=False)
 
         except Exception as e:
             raise e

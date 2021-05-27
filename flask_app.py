@@ -50,6 +50,7 @@ def get_next():
         if item['date'] >= now:
             d = item.copy()
             d.update({'remaining_time': humanize.precisedelta(item['date'] - now,minimum_unit="hours")})
+            d.update({'next_alarm_remaing_minutes': int(round((item['date'] - now).total_seconds() / 60))})
             return flask.jsonify(d)
 
 
