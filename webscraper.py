@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 from datetime import datetime
 import json
+from time import sleep
 from os import getcwd
 
 class GVU_StPoelten:
@@ -79,5 +80,9 @@ class GVU_StPoelten:
             return True
 
 if __name__ == "__main__":
-    r = GVU_StPoelten("https://stpoeltenland.umweltverbaende.at/?gem_nr=31917&jahr=2021&kat=32&portal=verband&vb=pl")
-    r.json_dump(r.format_to_json_object(r.get_garbage_collector_times()))
+
+    while True:
+
+        r = GVU_StPoelten(f"https://stpoeltenland.umweltverbaende.at/?gem_nr=31917&jahr={datetime.now().year}&kat=32&portal=verband&vb=pl")
+        r.json_dump(r.format_to_json_object(r.get_garbage_collector_times()))
+        sleep(os.getenv("WEBSCRAPER_SLEEP",3600)
