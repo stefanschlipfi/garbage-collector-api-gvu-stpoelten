@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 import json
 from time import sleep
-from os import getcwd
+import os
 
 class GVU_StPoelten:
     def __init__(self,destrict_url):
@@ -16,7 +16,7 @@ class GVU_StPoelten:
         self.split_pattern = '\s\s'
         self.from_date_format = '%d.%m.%Y'
         self.to_date_format = '%Y-%m-%d 06:00'
-        self.working_directory = "/opt/garbage-collector-api" 
+        self.working_directory = "/opt/garbage-collector-api"
 
     def load_page(self):
         """
@@ -62,9 +62,33 @@ class GVU_StPoelten:
             #standart format
             new_date_string = date.strftime(self.to_date_format)
 
-            return_list.append({'date':new_date_string,'garbage_container_type':item_list[1]})
+            return_list.append({'date':new_date_string,'garbage_container_type': [item_list[1]]})
 
         return return_list
+
+    def join_dates(self,json_list):
+        """
+        join dupplicates like
+         DO   01.06.2023   Biotonne
+         DO   01.06.2023   Gelber Sack 
+        """
+        item_list = []
+
+        for item in json_list.copy():
+            append_item = True
+            garbage_container_type_list = item.get('garbage_container_type',[])
+            for index,litem in enumerate(item_list):
+                if litem["date"] == item["date"]:
+                    garbage_container_type_list.append(litem['garbage_container_type'][0])
+                    item['garbage_container_type'] = garbage_container_type_list
+                    item_list[index] = item
+                    append_item = False
+
+            if append_item:
+                item['garbage_container_type'] = garbage_container_type_list
+                item_list.append(item)
+        
+        return item_list
 
     def json_dump(self,object):
         """
@@ -84,5 +108,5 @@ if __name__ == "__main__":
     while True:
 
         r = GVU_StPoelten(f"https://stpoeltenland.umweltverbaende.at/?gem_nr=31917&jahr={datetime.now().year}&kat=32&portal=verband&vb=pl")
-        r.json_dump(r.format_to_json_object(r.get_garbage_collector_times()))
-        sleep(os.getenv("WEBSCRAPER_SLEEP",3600)
+        r.json_dump(r.join_dates(r.format_to_json_object(r.get_garbage_collector_times())))
+        sleep(os.getenv("WEBSCRAPER_SLEEP",3600))

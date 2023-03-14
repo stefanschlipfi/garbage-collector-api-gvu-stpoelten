@@ -6,6 +6,7 @@ from datetime import datetime
 import humanize
     
 app = flask.Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 working_directory = "/opt/garbage-collector-api" 
 
@@ -15,7 +16,7 @@ def load_json():
     """
 
     try:
-        with open(working_directory + "/gvu_stpoelten.json",'r') as jf:
+        with open(working_directory + "/gvu_stpoelten.json",'r',encoding='utf-8') as jf:
             neu_datetime = list()
             for item in json.load(jf):
                 neu_datetime.append({'date':(datetime.strptime(item['date'],'%Y-%m-%d %H:%M')).replace(tzinfo=None),'garbage_container_type':item['garbage_container_type']})

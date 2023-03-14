@@ -1,0 +1,292 @@
+[
+    {
+        "date": "2023-03-09 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-03-22 06:00",
+        "garbage_container_type": [
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-03-23 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-03-28 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-04-06 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-04-18 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-04-20 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-05-04 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-05-09 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-05-16 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-05-17 06:00",
+        "garbage_container_type": [
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-06-01 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-06-13 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-06-15 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-06-20 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-06-27 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-06-29 06:00",
+        "garbage_container_type": [
+            "Gelber Sack"
+        ]
+    },
+    {
+        "date": "2023-07-06 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-07-12 06:00",
+        "garbage_container_type": [
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-07-18 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-07-27 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-08-01 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-08-08 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-08-17 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-08-24 06:00",
+        "garbage_container_type": [
+            "Gelber Sack"
+        ]
+    },
+    {
+        "date": "2023-08-29 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-09-06 06:00",
+        "garbage_container_type": [
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-09-07 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-09-12 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-09-19 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-09-21 06:00",
+        "garbage_container_type": [
+            "Gelber Sack"
+        ]
+    },
+    {
+        "date": "2023-09-28 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-10-03 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-10-05 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-10-19 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-10-24 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-11-02 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-11-06 06:00",
+        "garbage_container_type": [
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-11-16 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-11-28 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-11-30 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-12-05 06:00",
+        "garbage_container_type": [
+            "Altpapier"
+        ]
+    },
+    {
+        "date": "2023-12-14 06:00",
+        "garbage_container_type": [
+            "Gelber Sack",
+            "Biotonne"
+        ]
+    },
+    {
+        "date": "2023-12-22 06:00",
+        "garbage_container_type": [
+            "Gelber Sack"
+        ]
+    },
+    {
+        "date": "2023-12-27 06:00",
+        "garbage_container_type": [
+            "Einpersonenhaushalt: Restmüll",
+            "Mehrpersonenhaushalt: Restmüll"
+        ]
+    },
+    {
+        "date": "2023-12-28 06:00",
+        "garbage_container_type": [
+            "Biotonne"
+        ]
+    }
+]
